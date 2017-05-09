@@ -94,6 +94,8 @@ This plugin is an extension of L<Dist::Zilla::Plugin::InlineFiles>.
 
 You can look for information on this module at:
 
+=for stopwords AnnoCPAN
+
 =over 4
 
 =item * Search CPAN
