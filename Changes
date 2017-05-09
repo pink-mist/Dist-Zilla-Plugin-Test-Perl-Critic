@@ -1,6 +1,8 @@
 Revision history for Dist::Zilla::Plugin::Test::Perl::Critic
 
 {{$NEXT}}
+ - Test::Perl::Critic is now injected into the distribution as a develop prereq
+ - Test::Perl::Critic is now used unconditionally in the test (i.e. with no eval)
 
 3.000     2015-01-21 14:13:17+01:00 Europe/Paris
  - added missing prereq (Karen Etheridge / Gryphon Shafer)
