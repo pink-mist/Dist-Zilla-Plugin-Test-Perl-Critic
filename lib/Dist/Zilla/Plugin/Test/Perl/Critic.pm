@@ -9,7 +9,9 @@ use Moose;
 use Moose::Util qw( get_all_attribute_values );
 
 use Dist::Zilla::File::InMemory;
-use Data::Section 0.004 -setup;
+use Sub::Exporter::ForMethods 'method_installer';
+use Data::Section 0.004 { installer => method_installer }, '-setup';
+use namespace::autoclean;
 
 # and when the time comes, treat them like templates
 with qw(
