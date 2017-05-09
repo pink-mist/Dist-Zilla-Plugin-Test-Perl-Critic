@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Test::Perl::Critic;
 # ABSTRACT: Tests to check your code against best practices
-
+our $VERSION = '3.002';
 use Moose;
 use Moose::Util qw( get_all_attribute_values );
 
