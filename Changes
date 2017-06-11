@@ -1,6 +1,8 @@
 Revision history for Dist::Zilla::Plugin::Test::Perl::Critic::Freenode
 
 {{$NEXT}}
+
+0.001     2017-06-11 23:48:57+02:00 Europe/Stockholm
  - Forked from Dist::Zilla::Plugin::Test::Perl::Critic
 
 3.001     2017-05-09 22:32:01Z
