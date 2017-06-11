@@ -8,7 +8,7 @@ Dist::Zilla::Plugin::Test::Perl::Critic::Freenode - Tests to check your code aga
 
 =head1 VERSION
 
-version 0.001
+version 0.003
 
 =head1 SYNOPSIS
 
