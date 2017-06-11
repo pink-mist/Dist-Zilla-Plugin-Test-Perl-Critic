@@ -1,6 +1,7 @@
-Revision history for Dist::Zilla::Plugin::Test::Perl::Critic
+Revision history for Dist::Zilla::Plugin::Test::Perl::Critic::Freenode
 
 {{$NEXT}}
+ - Forked from Dist::Zilla::Plugin::Test::Perl::Critic
 
 3.001     2017-05-09 22:32:01Z
  - Test::Perl::Critic is now injected into the distribution as a develop prereq

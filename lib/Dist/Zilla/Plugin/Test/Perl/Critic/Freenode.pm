@@ -2,9 +2,9 @@ use 5.008;
 use strict;
 use warnings;
 
-package Dist::Zilla::Plugin::Test::Perl::Critic;
-# ABSTRACT: Tests to check your code against best practices
-our $VERSION = '3.002';
+package Dist::Zilla::Plugin::Test::Perl::Critic::Freenode;
+# ABSTRACT: Tests to check your code against policies inspired by #perl on Freenode
+
 use Moose;
 use Moose::Util qw( get_all_attribute_values );
 
@@ -20,12 +20,6 @@ with qw(
     Dist::Zilla::Role::PrereqSource
 );
 
-has critic_config => (
-    is      => 'ro',
-    isa     => 'Maybe[Str]',
-    default => 'perlcritic.rc',
-);
-
 sub gather_files {
     my ($self) = @_;
 
@@ -33,7 +27,6 @@ sub gather_files {
     return unless $data and %$data;
 
     my $stash = get_all_attribute_values( $self->meta, $self);
-    $stash->{critic_config} ||= 'perlcritic.rc';
 
     # NB: This code is a bit generalised really, and could be forked into its
     # own plugin.
@@ -55,6 +48,7 @@ sub register_prereqs {
             phase => 'develop',
         },
         'Test::Perl::Critic' => 0,
+        'Perl::Critic::Freenode' => 0,
 
         # TODO also extract list of policies used in file $self->critic_config
     );
@@ -71,26 +65,24 @@ __PACKAGE__->meta->make_immutable;
 
 In your F<dist.ini>:
 
-    [Test::Perl::Critic]
-    critic_config = perlcritic.rc ; default / relative to project root
+    [Test::Perl::Critic::Freenode]
 
 =head1 DESCRIPTION
 
-This will provide a F<xt/author/critic.t> file for use during the "test" and
-"release" calls of C<dzil>. To use this, make the changes to F<dist.ini>
-above and run one of the following:
+This will provide a F<xt/author/critic-freenode.t> file for use during the
+"test" and "release" calls of C<dzil>. To use this, make the changes to
+F<dist.ini> above and run one of the following:
 
     dzil test
     dzil release
 
-During these runs, F<xt/author/critic.t> will use L<Test::Perl::Critic> to run
-L<Perl::Critic> against your code and by report findings.
-
-This plugin accepts the C<critic_config> option, which specifies your own config
-file for L<Perl::Critic>. It defaults to C<perlcritic.rc>, relative to the
-project root. If the file does not exist, L<Perl::Critic> will use its defaults.
+During these runs, F<xt/author/critic-freenode.t> will use
+L<Test::Perl::Critic> to run L<Perl::Critic> against your code and report its
+findings.
 
 This plugin is an extension of L<Dist::Zilla::Plugin::InlineFiles>.
+
+This plugin is a fork of L<Dist::Zilla::Plugin::Test::Perl::Critic>.
 
 =head1 SEE ALSO
 
@@ -102,38 +94,34 @@ You can look for information on this module at:
 
 =item * Search CPAN
 
-L<http://search.cpan.org/dist/Dist-Zilla-Plugin-Test-Perl-Critic>
+L<http://search.cpan.org/dist/Dist-Zilla-Plugin-Test-Perl-Critic-Freenode>
 
 =item * See open / report bugs
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-Plugin-Test-Perl-Critic>
-
-=item * Mailing-list (same as L<Dist::Zilla>)
-
-L<http://www.listbox.com/subscribe/?list_id=139292>
+L<https://github.com/pink-mist/Dist-Zilla-Plugin-Test-Perl-Critic-Freenode/issues>
 
 =item * Git repository
 
-L<http://github.com/jquelin/dist-zilla-plugin-test-perl-critic>
+L<https://github.com/pink-mist/Dist-Zilla-Plugin-Test-Perl-Critic-Freenode>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/Dist-Zilla-Plugin-Test-Perl-Critic>
+L<http://annocpan.org/dist/Dist-Zilla-Plugin-Test-Perl-Critic-Freenode>
 
 =item * CPAN Ratings
 
-L<http://cpanratings.perl.org/d/Dist-Zilla-Plugin-Test-Perl-Critic>
+L<http://cpanratings.perl.org/d/Dist-Zilla-Plugin-Test-Perl-Critic-Freenode>
 
 =back
 
 =cut
 
 __DATA__
-___[ xt/author/critic.t ]___
+___[ xt/author/critic-freenode.t ]___
 #!perl
 
 use strict;
 use warnings;
 
-use Test::Perl::Critic (-profile => "{{ $critic_config }}") x!! -e "{{ $critic_config }}";
+use Test::Perl::Critic (-theme => 'freenode');
 all_critic_ok();

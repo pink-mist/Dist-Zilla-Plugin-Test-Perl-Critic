@@ -26,11 +26,11 @@ patches you have.
 
 You may need to satisfy some dependencies.  The easiest way to satisfy
 dependencies is to install the last release -- this is available at
-https://metacpan.org/release/Dist-Zilla-Plugin-Test-Perl-Critic
+https://metacpan.org/release/Dist-Zilla-Plugin-Test-Perl-Critic-Freenode
 
 If you use cpanminus, you can do it without downloading the tarball first:
 
-  $ cpanm --reinstall --installdeps --with-recommends Dist::Zilla::Plugin::Test::Perl::Critic
+  $ cpanm --reinstall --installdeps --with-recommends Dist::Zilla::Plugin::Test::Perl::Critic::Freenode
 
 Dist::Zilla is a very powerful authoring tool, but requires a number of
 author-specific plugins.  If you would like to use it for contributing,
@@ -72,7 +72,7 @@ Once installed, here are some dzil commands you might try:
 You can learn more about Dist::Zilla at http://dzil.org/.
 
 The code for this distribution is hosted at GitHub. The repository is:
-https://github.com/karenetheridge/Dist-Zilla-Plugin-Test-Perl-Critic
+https://github.com/pink-mist/Dist-Zilla-Plugin-Test-Perl-Critic-Freenode
 You can submit code changes by forking the repository, pushing your code
 changes to your clone, and then submitting a pull request. Detailed
 instructions for doing that is available here:
@@ -81,13 +81,7 @@ https://help.github.com/articles/creating-a-pull-request
 
 If you have found a bug, but do not have an accompanying patch to fix it, you
 can submit an issue report here:
-https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-Test-Perl-Critic
-or via email: bug-Dist-Zilla-Plugin-Test-Perl-Critic@rt.cpan.org
-
-There is also a mailing list available for users of this distribution, at
-http://dzil.org/#mailing-list
-There is also an irc channel available for users of this distribution, at
-irc://irc.perl.org/#distzilla
+https://github.com/pink-mist/Dist-Zilla-Plugin-Test-Perl-Critic-Freenode/issues
 
 If you send me a patch or pull request, your name and email address will be
 included in the documentation as a contributor (using the attribution on the
