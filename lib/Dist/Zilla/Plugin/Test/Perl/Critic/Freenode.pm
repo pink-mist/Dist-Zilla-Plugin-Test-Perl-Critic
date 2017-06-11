@@ -114,6 +114,10 @@ L<http://cpanratings.perl.org/d/Dist-Zilla-Plugin-Test-Perl-Critic-Freenode>
 
 =back
 
+=head1 ORIGINAL AUTHOR
+
+Original author of L<Dist::Zilla::Plugin::Test::Perl::Critic> is Jerome Quelin
+
 =cut
 
 __DATA__
